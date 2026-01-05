@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome App</title>
+  <style>
+    :root {
+      --pink: #ff69b4;
+      --pink-soft: #ffb6d9;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: var(--pink-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app {
+      text-align: center;
+      transition: filter 0.3s ease;
+    }
+
+    .app.blurred {
+      filter: blur(6px);
+    }
+
+    h1 {
+      color: white;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    button {
+      background: white;
+      color: var(--pink);
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #fff0f7;
+    }
+
+    /* Overlay */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: white;
+      color: var(--pink);
+      padding: 30px 40px;
+      border-radius: 16px;
+      position: relative;
+      min-width: 300px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--pink);
+    }
+
+    .modal p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="app" id="app">
+    <h1>WELCOME</h1>
+    <button id="openBtn">Click here</button>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <button class="close" id="closeBtn">✕</button>
+      <p>I am a functioning button.</p>
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById('openBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const overlay = document.getElementById('overlay');
+    const app = document.getElementById('app');
+
+    openBtn.addEventListener('click', () => {
+      overlay.classList.add('active');
+      app.classList.add('blurred');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      overlay.classList.remove('active');
+      app.classList.remove('blurred');
+    });
+  </script>
+</body>
+</html>
