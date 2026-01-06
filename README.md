@@ -4,12 +4,12 @@ This is used to demonstrate a DevOps CI/CD pipeline on AWS.
 The web application is deployed to an EC2 instance using CloudFormation.
 
 ## Repository Structure
-devops-cloud-pipeline/
-├── main/
-│   ├── app/
-│   │   └── webapp.html         # The web application
-│   └── infrastructure/
-│       └── template.yaml       # CloudFormation template for EC2 and security group
+devops-cloud-pipeline/  
+├── main/  
+│   ├── app/  
+│   │   └── webapp.html         # The web application  
+│   └── infrastructure/  
+│       └── template.yaml       # CloudFormation template for EC2 and security group  
 ├── README.md                    # This file
 
 ## Deployment
