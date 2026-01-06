@@ -7,7 +7,7 @@ The web application is deployed to an EC2 instance using CloudFormation.
 devops-cloud-pipeline/  
 ├── main/  
 │   ├── app/  
-│   │   └── webapp.html         # The web application  
+│      └── webapp.html         # The web application  
 │   └── infrastructure/  
 │       └── template.yaml       # CloudFormation template for EC2 and security group  
 ├── README.md                    # This file
