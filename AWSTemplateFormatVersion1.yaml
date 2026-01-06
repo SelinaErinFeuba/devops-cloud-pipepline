@@ -49,6 +49,10 @@ Resources:
         yum install -y httpd
         systemctl start httpd
         systemctl enable httpd
+        cd /var/www/html
+        rm -f index.html
+        git clone https://github.com/SelinaErinFeuba/devops-cloud-pipepline.git
+        cp devops-cloud-pipepline/main/app/webapp.html ./index.html
         
 Outputs:
   WebsiteURL:
@@ -56,4 +60,5 @@ Outputs:
       - ''
       - - http://
         - !GetAtt WebServer.PublicDnsName
+
     Description: Website URL
